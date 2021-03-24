@@ -2,19 +2,19 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="60497" started-at="2021-03-24T15:05:44 EDT" finished-at="2021-03-24T15:06:45 EDT">
+  <suite name="Default suite" duration-ms="58763" started-at="2021-03-24T15:39:00 EDT" finished-at="2021-03-24T15:39:59 EDT">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.qa.bestbuy.automation.runners.TestRunner@4d50efb8]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Default test" duration-ms="60497" started-at="2021-03-24T15:05:44 EDT" finished-at="2021-03-24T15:06:45 EDT">
+    <test name="Default test" duration-ms="58763" started-at="2021-03-24T15:39:00 EDT" finished-at="2021-03-24T15:39:59 EDT">
       <class name="com.qa.bestbuy.automation.runners.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.qa.bestbuy.automation.runners.TestRunner@4d50efb8]" name="setUpClass" is-config="true" duration-ms="166" started-at="2021-03-24T15:05:44 EDT" finished-at="2021-03-24T15:05:44 EDT">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.qa.bestbuy.automation.runners.TestRunner@4d50efb8]" name="setUpClass" is-config="true" duration-ms="174" started-at="2021-03-24T15:39:00 EDT" finished-at="2021-03-24T15:39:00 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.qa.bestbuy.automation.runners.TestRunner@4d50efb8]" name="feature" duration-ms="60237" started-at="2021-03-24T15:05:44 EDT" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-03-24T15:06:45 EDT">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.qa.bestbuy.automation.runners.TestRunner@4d50efb8]" name="feature" duration-ms="58496" started-at="2021-03-24T15:39:00 EDT" description="Runs Cucumber Feature" data-provider="features" finished-at="2021-03-24T15:39:59 EDT">
           <params>
             <param index="0">
               <value>
@@ -25,7 +25,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.qa.bestbuy.automation.runners.TestRunner@4d50efb8]" name="tearDownClass" is-config="true" duration-ms="4" started-at="2021-03-24T15:06:45 EDT" finished-at="2021-03-24T15:06:45 EDT">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.qa.bestbuy.automation.runners.TestRunner@4d50efb8]" name="tearDownClass" is-config="true" duration-ms="4" started-at="2021-03-24T15:39:59 EDT" finished-at="2021-03-24T15:39:59 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
