@@ -19,17 +19,19 @@ public class SelectProductDetailsSteps
 	
 	TestContext  testContext;
 	SelectProductDetails selectProductDetails;
+	CommonUtilities commonUtilities;
 	
 	public SelectProductDetailsSteps(TestContext context){
 		this.testContext = context;
 		selectProductDetails = testContext.getPageObjectManager().getSelectProductDetailsPage();
-		
+		commonUtilities=testContext.getPageObjectManager().getCommonUtilities();
+
 		
 	}
 
 	
 	public WebDriver driver;
-	CommonUtilities commonUtilities = new CommonUtilities();
+	//CommonUtilities commonUtilities = new CommonUtilities();
 	//SelectProductDetails selectProductDetails = new SelectProductDetails(driver);
 	
 	@Then("^User Choose Options$")
@@ -60,6 +62,10 @@ public class SelectProductDetailsSteps
 		{
 			selectProductDetails.selectColor(data.get("Color"));
 		}
+		if(data.containsKey("Options"))
+		{
+			selectProductDetails.selectOptions("Options");
+		}
 	}
 	
 //	@Then("^User Should be able to Select the Product$")
@@ -88,10 +94,10 @@ public class SelectProductDetailsSteps
 //		selectProductDetails.selectColor(commonUtilities.getproperties("color"));
 //	}
 
-	@Then("^User Should be able to Select the Options$")
-	public void user_Should_be_able_to_Select_the_Options() throws Throwable {
-		selectProductDetails.selectOptions(commonUtilities.getproperties("options"));
-	}
+//	@Then("^User Should be able to Select the Options$")
+//	public void user_Should_be_able_to_Select_the_Options() throws Throwable {
+//		selectProductDetails.selectOptions(commonUtilities.getproperties("options"));
+//	}
 
 	@Then("^User Should be able to add item to Cart$")
 	public void user_Should_be_able_to_add_item_to_Cart() throws Throwable {
@@ -104,8 +110,12 @@ public class SelectProductDetailsSteps
 	}
 
 	@Then("^User Should be able to select the plan$")
-	public void user_Should_be_able_to_select_the_plan() throws Throwable {
-		selectProductDetails.unlimitedRadio(commonUtilities.getproperties("selectRadio"));
+	public void user_Should_be_able_to_select_the_plan(DataTable testData) throws Throwable {
+		
+		Map<String, String> data = testData.asMap(String.class, String.class);
+		selectProductDetails.unlimitedRadio(data.get("selectRadio"));
+
+		//selectProductDetails.unlimitedRadio(commonUtilities.getproperties("selectRadio"));
 
 	}
 

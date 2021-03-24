@@ -2,6 +2,7 @@ package com.qa.bestbuy.automation.managers;
 
 import org.openqa.selenium.WebDriver;
 
+import com.qa.bestbuy.automation.helpers.CommonUtilities;
 import com.qa.bestbuy.automation.pageObjects.Cart;
 import com.qa.bestbuy.automation.pageObjects.SearchProduct;
 import com.qa.bestbuy.automation.pageObjects.SelectProductDetails;
@@ -11,6 +12,7 @@ public class PageObjectManager {
 	private SearchProduct searchProduct;
 	private SelectProductDetails selectProductDetails;
 	private Cart cart;
+	private CommonUtilities commonUtilities;
 
 	public PageObjectManager(WebDriver driver) {
 		this.driver = driver;
@@ -29,6 +31,11 @@ public class PageObjectManager {
     public Cart getCartPage()
     {
     	return (cart ==null) ? cart = new Cart(driver):cart;
+    }
+    public CommonUtilities getCommonUtilities()
+    {
+		return (commonUtilities == null) ? commonUtilities = new CommonUtilities(): commonUtilities;
+    	
     }
     
 

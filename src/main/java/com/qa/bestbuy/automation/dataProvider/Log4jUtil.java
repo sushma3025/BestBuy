@@ -1,5 +1,6 @@
 package com.qa.bestbuy.automation.dataProvider;
 
-public class Log4jUtil {
+public class Log4jUtil 
+{
 
 }

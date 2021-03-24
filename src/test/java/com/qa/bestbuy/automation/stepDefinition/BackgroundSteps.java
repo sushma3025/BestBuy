@@ -1,5 +1,6 @@
 package com.qa.bestbuy.automation.stepDefinition;
 
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -10,6 +11,7 @@ import com.qa.bestbuy.automation.helpers.CommonUtilities;
 import com.qa.bestbuy.automation.managers.WebDriverManager;
 import com.qa.bestbuy.automation.pageObjects.SearchProduct;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
@@ -21,23 +23,26 @@ public class BackgroundSteps {
 	TestContext  testContext;
 	
 	public BackgroundSteps(TestContext context){
-		this.testContext = context;		
+		this.testContext = context;	
+		driver = testContext.getWebDriverManager().getDriver();
+
 	}
 	
-	CommonUtilities commonUtilities = new CommonUtilities();
+	//CommonUtilities commonUtilities = new CommonUtilities();
 	//WebDriverManager webDriverManager = new WebDriverManager();
 	
 	@Given("^i should navigate to the home page$")
-	public void i_should_navigate_to_the_home_page() throws Throwable 
+	public void i_should_navigate_to_the_home_page(DataTable testData) throws Throwable 
 	{
-		driver = testContext.getWebDriverManager().getDriver();
+		Map<String, String> data = testData.asMap(String.class, String.class);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get(commonUtilities.getproperties("url"));  
+		driver.get(data.get("url"));  
 	}
 	@Then("^verify the page is launched$")
-	public void verify_the_page_is_launched() throws Throwable 
+	public void verify_the_page_is_launched(DataTable testData) throws Throwable 
 	{
-	    Assert.assertEquals(driver.getCurrentUrl(), commonUtilities.getproperties("url"));
+		Map<String, String> data = testData.asMap(String.class, String.class);
+		Assert.assertEquals(driver.getCurrentUrl(), data.get("url"));
 		System.out.println("Browser Launched Successfully");
 		Thread.sleep(3000);	
 	}

@@ -34,7 +34,7 @@ public class SearchProduct {
 
 	public void popUp() throws InterruptedException, AWTException {
 			
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		if(popUp.isDisplayed())
 		{
 			popUp.click();

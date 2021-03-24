@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 
 public class CommonUtilities 
 {
+	
 	public void jsClick(WebDriver driver, WebElement ele)
 	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
