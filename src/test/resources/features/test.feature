@@ -6,7 +6,7 @@ Given i should navigate to the home page
 Then verify the page is launched
 |url|https://www.bestbuy.com/|
 
-
+@test
 Scenario: Search and Select Product and Verify the Product is added to cart
 Given User Launches the Application and Clicks On PopUp
 When User Enters text in the SearchBox
@@ -28,7 +28,7 @@ And User Choose Options
 And User Should be able to add item to Cart
 And User Should be able to select the plan
 |selectRadio|radio-1|
-And User Should be able to see the item in the cart
+Then User Should be able to see the item in the cart
 When User Clicks on Cart
 Then user Should verify that the product is added to cart
 |model|iPhone 12 Pro Max|
